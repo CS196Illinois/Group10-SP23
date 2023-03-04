@@ -1,0 +1,59 @@
+#bouncing off wall, 2 balls
+import turtle
+import numpy as np
+import random
+
+width = 600
+height = 600
+
+window = turtle.Screen()
+window.setup(width, height)
+window.tracer(0)
+
+
+ball_1 = turtle.Turtle()
+
+ball_1.penup()
+ball_1.shape("circle")
+ball_1.color("light green")
+
+ball_2 = turtle.Turtle()
+
+ball_2.penup()
+ball_2.shape("circle")
+ball_2.color("purple")
+
+s = random.randrange(-10,10)  ##generate random initial velocity for ball1 and ball2
+p = random.randrange(-10,10) 
+velocity_1 = np.array([s,p])*0.01
+
+a = random.randrange(-10,10)
+b = random.randrange(-10,10) 
+velocity_2 = np.array([a,b])*0.01
+
+while True:
+    if ball_1.xcor() > width/2:
+        velocity_1[0] = -velocity_1[0]  ##change velocity every time the ball hits a wall
+    elif ball_1.xcor() < -width/2:
+        velocity_1[0] = -velocity_1[0]
+    elif ball_1.ycor() > height/2:
+        velocity_1[1] = -velocity_1[1]
+    elif ball_1.ycor() < -height/2:
+        velocity_1[1] = -velocity_1[1]
+        
+    ball_1.setx(ball_1.xcor() + velocity_1[0])
+    ball_1.sety(ball_1.ycor() + velocity_1[1])
+    
+    if ball_2.xcor() > width/2:
+        velocity_2[0] = -velocity_2[0]
+    elif ball_2.xcor() < -width/2:
+        velocity_2[0] = -velocity_2[0]
+    elif ball_2.ycor() > height/2:
+        velocity_2[1] = -velocity_2[1]
+    elif ball_2.ycor() < -height/2:
+        velocity_2[1] = -velocity_2[1]
+        
+    ball_2.setx(ball_2.xcor() + velocity_2[0])
+    ball_2.sety(ball_2.ycor() + velocity_2[1])
+        
+    window.update()
