@@ -1,5 +1,5 @@
 # Group 10
-Group Name: TEAM_NAME
+Group Name: Group 10
 
 [MVP Link](https://docs.google.com/document/d/1viztdoYW8ycVCIGo2WIv-xwo_nwSMjmlsOkazAC0V9A/edit?usp=share_link)
 
