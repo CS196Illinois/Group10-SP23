@@ -1,0 +1,46 @@
+h1, h2, h3 {
+    text-align: center;
+  }
+  body { background-color: rgb(24, 60, 64);
+    font-family: "Arial Rounded MT Bold"; 
+}
+h1 {
+    font-size: 60px;
+    color:rgb(178, 231, 234);
+  }
+  h2 {
+    font-size: 30px;
+    color:rgb(255, 255, 255);
+  }
+  h3 {
+    font-size: 20px;
+    color:rgb(236, 217, 205);
+  }
+  .selection {
+    width: 80%;
+    background-image:url('https://i.pinimg.com/originals/0e/36/aa/0e36aafd228163d68a4d2ea324c57436.gif'); background-repeat:repeat;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+  }
+
+.item p {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.fishtype {
+  color: aliceblue;
+  text-align: left;
+  width: 75%;
+}
+
+.price {
+  color: aliceblue;
+  text-align: right;
+  width: 25%;
+}
+  
