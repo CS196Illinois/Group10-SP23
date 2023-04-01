@@ -1,7 +1,7 @@
 h1, h2, h3 {
     text-align: center;
   }
-  body { background-color: rgb(24, 60, 64);
+  body { background-color: rgb(7, 47, 52);
     font-family: "Arial Rounded MT Bold"; 
 }
 h1 {
@@ -24,7 +24,14 @@ h1 {
     padding: 20px;
     max-width: 500px;
   }
-
+.RyukinImage {
+    width: 80%;
+    background-image:url('https://www.blendswap.com/blend_previews/25375/0/0'); background-repeat:repeat;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+}
 .item p {
   display: inline-block;
   margin-top: 5px;
@@ -43,4 +50,35 @@ h1 {
   text-align: right;
   width: 25%;
 }
-  
+nav {
+  height: 80%;
+  width: 80%;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+a {
+  position: relative;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color:aliceblue;
+  letter-spacing: 0.5px;
+}
+a:after{
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 112, 22);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -2px;
+  transition: .5s;
+}
+a:hover{
+  color: rgb(199, 244, 236);
+}
+a:hover:after {
+  width: 100%;
+}
