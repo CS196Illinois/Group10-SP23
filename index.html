@@ -1,49 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>GuppyGuru</title>
-        <link rel="stylesheet" href="fishing.styles.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Montserrat:wght@500&display=swap" rel="stylesheet">
-
-    </head>
-    <body>
-      <header>
-        <nav>
-          <ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" type = "text/css" href="choosefish.css"/>
+    
+    <title>Choose Your Fish</title>
+</head>
+<body>
+    <div class="container" id =navBar>
+        <!-- <ul>
             <li><a href="index.html">Homepage</a></li>
             <li><a href="choosefish.html">Choose Your Fish</a></li>
-          </ul>
-        </nav>
-      </header>
-      
-      <main>
-        <body>
-        <h1>Guppy Guru!</h1>
-          <div class="selection">
-            <h2>It's Swimmingly Simple!</h2>
-              <article>
-
-              </article>
-              <section>
-                <h3>Choose Your Fish</h3>
-                <article class="item">
-                  <p class="fishtype">Ryukin Goldfish</p><p class="price">$6.99</p>
-                </article>
-                <article class="item">
-                  <p class="fishtype">Betta</p><p class="price">$3.99</p>
-                </article>
-                <article class="item">
-                  <p class="fishtype">Neon Tetra</p><p class="price">$3.00</p>
-                </article>
-                <article class="item">
-                  <p class="fishtype">Platinum Guppy</p><p class="price">$2.50</p>
-                </article>
-                </section>
-              </body>
+          </ul> -->
+          <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
+            <a class="navbar-brand" href="#">GuppyGuru</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
             </div>
-          </main>
-          </html>
+          </nav>
+          
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://pngimg.com/uploads/goldfish/goldfish_PNG20.png" alt="Ryukin">
+            </div>
+
+            <div class="card-body">
+                <span class="power">$6.99</span>
+                <h2>Ryukin Goldfish</h2>
+                <p>Known for its vibrant colors, graceful movements, and unique features, the Ryukin Goldfish is a popular choice for aquarium enthusiasts.</p>
+            </div>
+
+            <div class="card-footer">
+                <div class="info">
+                    <div class="value">64°F to 72°F</div>
+                    <div class="type">Water Temp</div>
+                </div>
+                <div class="info">
+                    <div class="value">dry flakes</div>
+                    <div class="type">Food</div>
+                </div>
+                <div class="info">
+                    <div class="value">3.5</div>
+                    <div class="type">ease of care</div>
+                </div>
+            </div>
+
+            <div class="selector">
+              <li><a href="RyukinTank.html">
+                <button>go with this!</button>
+              </a></li>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://www.aqueon.com/-/media/project/oneweb/aqueon/us/care-guides/betta/betta-coralblue_600x400.png" alt="Betta">
+            </div>
+
+            <div class="card-body">
+                <span class="power">$3.99</span>
+                <h3>Siamese Fighting Fish</h3>
+                <p>Bettas, known for their occassional aggressive displays, will bring beauty to any aquatic environment when properly cared for. </p>
+            </div>
+
+            <div class="card-footer">
+                <div class="info">
+                    <div class="value">74-80°F</div>
+                    <div class="type">Water Temp</div>
+                </div>
+                <div class="info">
+                    <div class="value">pellets</div>
+                    <div class="type">Food</div>
+                </div>
+                <div class="info">
+                    <div class="value">3</div>
+                    <div class="type">ease of Care</div>
+                </div>
+            </div>
+            <div class="selector">
+              <li><a href="BettaTank.html">
+                <button>go with this!</button>
+              </a></li>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://www.pngplay.com/wp-content/uploads/9/Neon-Tetra-PNG-Images-HD.png" alt="Neon Tetra">
+            </div>
+
+            <div class="card-body">
+                <span class="power">$3.00</span>
+                <h2>Neon Tetra</h2>
+                <p>This peaceful fish is loved for its stunning appearance and peaceful demeanor. The Neon Tetra is often considered a staple in community tanks.</p>
+            </div>
+
+            <div class="card-footer">
+              <div class="info">
+                  <div class="value">75-80°F</div>
+                  <div class="type">Water Temp</div>
+              </div>
+              <div class="info">
+                  <div class="value">dry flake</div>
+                  <div class="type">Food</div>
+              </div>
+              <div class="info">
+                  <div class="value">3</div>
+                  <div class="type">ease of care</div>
+              </div>
+          </div>
+            <div class="selector">
+              <li><a href="NeonTetra.html">
+                <button>go with this!</button>
+              </a></li>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="https://mytanklife.b-cdn.net/wp-content/uploads/2022/10/platinum-guppy-removebg-preview-600x600.png" alt="Character">
+            </div>
+
+            <div class="card-body">
+                <span class="power">$2.50</span>
+                <h2>Platinum Guppy</h2>
+                <p>Known for their vibrant colors, unique patterns and low aggression, platinum guppies make a great choices for beginner aquarists.</p>
+            </div>
+
+            <div class="card-footer">
+              <div class="info">
+                  <div class="value">72-82°F</div>
+                  <div class="type">Water Temp</div>
+              </div>
+              <div class="info">
+                  <div class="value">pellets</div>
+                  <div class="type">Food</div>
+              </div>
+              <div class="info">
+                  <div class="value">4</div>
+                  <div class="type">ease of Care</div>
+              </div>
+          </div>
+            <div class="selector">
+              <li><a href="GuppyTank.html">
+                <button>go with this!</button>
+              </a></li>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
