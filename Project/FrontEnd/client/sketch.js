@@ -331,6 +331,12 @@ class Fish {
     this.acceleration = createVector(0, 0);
     this.velocity = p5.Vector.random2D();
     this.position = createVector(x, y);
+    if (this.position.x < 30 || this.position.x > 650) {
+      this.position.x = 40;
+    }
+    if (this.position.y < 30 || this.position.y > 320) {
+      this.position.y = 40;
+    }
     this.r = 3.0;
     this.maxspeed = 3;    // Maximum speed
     this.maxforce = 0.05; // Maximum steering force
@@ -376,7 +382,7 @@ class Fish {
     if (this.position.x < 30 || this.position.x > 650) {
       this.velocity.x = -1 * this.velocity.x;
     }
-    if (this.position.y < 30 || this.position.y > 350) {
+    if (this.position.y < 30 || this.position.y > 320) {
       this.velocity.y = -1 * this.velocity.y;
     }
   }
