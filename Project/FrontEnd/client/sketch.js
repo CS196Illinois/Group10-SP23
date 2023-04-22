@@ -1,5 +1,5 @@
 // flocking code taken from p5.js examples
-
+// import Sprite() 'sprite.js';
 let boids = [];
 let tank;
 let blueFsh;
@@ -8,14 +8,15 @@ let dude;
 // horse sprite example
 let spritesheet;
 let spritedata;
-
 let animation = [];
+let leftward = [];
+let rightward = [];
 
 let horses = [];
 
 function preload() {
-  spritedata = loadJSON('assets/horse.json');
-  spritesheet = loadImage('assets/dude.png');
+  spritedata = loadJSON('assets/fish.json');
+  spritesheet = loadImage('assets/clearFishSheet.png');
 }
 
 function setup() {
@@ -45,7 +46,7 @@ function setup() {
   }
   blueFsh.updatePixels();
 
-  dude = loadImage('assets/dude.png')
+  dude = loadImage('assets/clearFishSheet.png')
   for (let x = 0; x < dude.width; x++) {
     for (let y = 0; y < dude.height; y++) {
       let a = map(y, 0, dude.height, 255, 0);
@@ -58,8 +59,8 @@ function setup() {
   for (let i = 0; i < 100; i++) {
     boids[i] = new Boid(random(width), random(height));
   }
-  
-  for (let i = 0; i < 1; i++) {
+  // VVV fish constructors
+  for (let i = 0; i < 3; i++) {
     fish[i] = new Fish(random(width), random(height))
   }
 
@@ -74,22 +75,36 @@ function setup() {
 
 
   let frames = spritedata.frames;
-  for (let i = 0; i < frames; i++) {
+  for (let i = 0; i < frames.length; i++) {
     let pos = frames[i].position;
     let img = spritesheet.get(pos.x, pos.y, pos.w, pos.h);
     animation.push(img);
   }
-  // ERROR animation WONT PUSH IMAGE?
+  // leftward vvv
+  for (let i = 0; i < 6; i++) {
+    let pos = frames[i].position;
+    console.log(pos)
+    let img = spritesheet.get(pos.x, pos.y, pos.w, pos.h);
+    console.log(img)
+    rightward.push(img);
+  }
+  // rightward vvv
+  for (let i = 6; i < frames.length; i++) {
+    let pos = frames[i].position;
+    let img = spritesheet.get(pos.x, pos.y, pos.w, pos.h);
+    leftward.push(img);
+  }
+  
 
 
+  // img = spritesheet.get(0, 0, 32, 48);
+  // animation.push(img);
 
-  img = spritesheet.get(0, 0, 32, 48);
-  animation.push(img);
 
-
-  /* for (let i = 0; i < 5; i++) {
+  /* for (let i = 0; i < 8; i++) {
     horses[i] = new Sprite(animation, 0, i * 75, random(0.1, 0.4));
-  }*/
+  }
+  */
 }
 
 function draw() {
@@ -116,8 +131,32 @@ function draw() {
     horse.show();
     horse.animate();
   }*/
-  image(animation[0], 10, 10);
+
+  for (fram in animation) {
+    // showing()
+    // animate(.01);
+  }
+  
+  // image(rightward[frameCount % rightward.length], 10, 10);
   // ^^ test case for animation images
+}
+let indexr = 0;
+let xpos = 10;
+let ypos= 10;
+function showing() {
+  let index = floor(indexr) % animation.length;
+  image(animation[index], xpos, ypos);
+}
+
+function animate(speed) {
+  
+  indexr += speed;
+  xpos += speed * 15;
+
+  if (xpos > animation[0].width) {
+    xpos = -animation[0].width;
+  }
+  // image(animation[indexr % animation.length], x, 10);
 }
 
 // Boid class
@@ -189,6 +228,7 @@ class Boid {
     fill(127, 127);
     stroke(200);
     ellipse(this.position.x, this.position.y, 16, 16);
+    
 
     // scale(0.1)
     // image(blueFsh, this.position.x - blueFsh.width/2, this.position.y - blueFsh.height/2);
@@ -332,6 +372,13 @@ class Fish {
     this.position.add(this.velocity);
     // Reset acceleration to 0 each cycle
     this.acceleration.mult(0);
+    // 720 x 400 is frame
+    if (this.position.x < 30 || this.position.x > 650) {
+      this.velocity.x = -1 * this.velocity.x;
+    }
+    if (this.position.y < 30 || this.position.y > 350) {
+      this.velocity.y = -1 * this.velocity.y;
+    }
   }
   
   // A method that calculates and applies a steering force towards a target
@@ -347,15 +394,37 @@ class Fish {
     return steer;
   }
   
-  // Draw boid as a circle
+  // Draw Fish as Sprite
   render() {
+    xpos = this.position.x;
+    ypos = this.position.y;
+    animate(.01);
     
-    /* fill(200, 200);
-    stroke(500);
-    ellipse(this.position.x, this.position.y, 16, 16); */
-
-    // scale(0.1)
-    image(dude, this.position.x - dude.width/2, this.position.y - dude.height/2);
+    let index = floor(indexr) % animation.length;
+    
+    if (this.velocity.x < 0) {
+      // go left
+      // index = 0;
+      image(leftward[index], this.position.x, this.position.y);
+      if (indexr > 3) {
+        indexr = 0;
+      }
+      if (xpos > animation[0].width) {
+        xpos = -animation[0].width;
+      }
+    } else if (this.velocity.x == 0) {
+      image(animation[4], this.position.x, this.position.y);
+    } else {
+      // go right
+      // index = 5;
+      image(rightward[index], this.position.x, this.position.y);
+      if (indexr > 3) {
+        indexr = 0;
+      }
+      if (xpos > animation[0].width) {
+        xpos = -animation[0].width;
+      }
+    }
   }
   
   // Wraparound
