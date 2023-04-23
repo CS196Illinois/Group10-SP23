@@ -1,0 +1,9 @@
+// make seperate circle that is image as fish to randomly move
+// make interactable with environment
+
+// make multiple sprite sheets for left and right movement
+// make boundaries so it must invert
+
+// fish sprites --> x: 108 y: 80
+
+fix error where boids code locks fish into sprite spiral at border

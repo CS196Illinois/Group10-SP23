@@ -1,0 +1,4 @@
+index.html runs main.js runs counter.js (through imports)
+cd into client
+in terminal ("npm run dev")
+auto changes website with saves in real time (no terminal changes needed)
