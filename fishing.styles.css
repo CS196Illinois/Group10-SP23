@@ -1,62 +1,11 @@
-h1, h2, h3 {
-    text-align: center;
-}
-body { background-color: rgb(8, 40, 46);
-  font-family: 'DynaPuff', cursive;
-}
-h1 {
-    font-size: 60px;
-    color:rgb(178, 231, 234);
-  }
-  h2 {
-    font-size: 30px;
-    color:rgb(255, 255, 255);
-  }
-  h3 {
-    font-size: 20px;
-    color:rgb(255, 255, 255);
-  }
-  .selection {
-    width: 80%;
-    background-image:url('https://i.pinimg.com/originals/0e/36/aa/0e36aafd228163d68a4d2ea324c57436.gif'); background-repeat:repeat;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    max-width: 500px;
-  }
-.item p {
-  display: inline-block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 18px;
-}
 
-.fishtype {
-  color: aliceblue;
-  text-align: left;
-  width: 75%;
-}
-
-.price {
-  color: aliceblue;
-  text-align: right;
-  width: 25%;
-}
-nav {
-  height: 80%;
-  width: 80%;
-  min-width: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-left: -450px;
-}
 a {
   position: relative;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  color:aliceblue;
+  color:rgb(0, 0, 0);
   letter-spacing: 5px;
+  margin-left: 100px;
 }
 a:after{
   content: "";
@@ -69,7 +18,7 @@ a:after{
   transition: .5s;
 }
 a:hover{
-  color: rgb(199, 244, 236);
+  color: rgb(13, 52, 45);
 }
 a:hover:after {
   width: 100%;
