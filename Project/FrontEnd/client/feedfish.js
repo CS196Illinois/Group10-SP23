@@ -1,3 +1,18 @@
+const fish = localStorage.getItem('selectedFish'); // grabbing fish image from localstorage
+let texture;
+if (fish) { // if fish isn't NULL
+    if (fish.includes("clearFish")) {
+        texture = 'assets/ryukin.png';
+    } else if (fish.includes("siamese")) {
+        texture = 'assets/siamese.png';
+    } else if (fish.includes("neon")) {
+        texture = 'assets/ryukin.png' // needs neon tetra image
+    } else {
+        texture = 'assets/ryukin.png'; // needs platinum guppy image
+    }
+} else { // if user hasn't selected fish yet, then use default
+    texture = 'assets/ryukin.png';
+}
 ;(function() {;
     var ρσ_modules = {};
     ρσ_modules.pythonize = {};
@@ -257,7 +272,7 @@
         var random = ρσ_modules.random;
 
         "7";
-        fish = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(1, 0, 0), radius: .2, color: color.orange, texture: "https://png.pngtree.com/png-clipart/20220624/ourmid/pngtree-fish-sea-fish-fish-png-image_5318367.png"})]);
+        fish = ρσ_interpolate_kwargs.call(this, cylinder, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), axis: vec(1, 0, 0), radius: .2, color: color.orange, texture: texture})]);
         "8";
         tank = ρσ_interpolate_kwargs.call(this, box, [ρσ_desugar_kwargs({pos: vec(0, 0, 0), length: 15, height: 15, width: 15, opacity: .2, color: color.blue})]);
         "9";
