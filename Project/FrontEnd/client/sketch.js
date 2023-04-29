@@ -15,11 +15,17 @@ let rightward = [];
 let horses = [];
 
 function preload() {
-  spritedata = loadJSON('assets/fish.json');
   const fish_sheet = localStorage.getItem('selectedFish'); // grabbing fish image from localstorage
   if (fish_sheet) { // if fish_sheet isn't NULL
+    if (fish_sheet == 'assets/siameseFishSheet.png') {
+      spritedata = loadJSON('assets/siaFish.json');
+      spritesheet = loadImage(fish_sheet);      
+    } else {
+      spritedata = loadJSON('assets/fish.json');
       spritesheet = loadImage(fish_sheet);
+    }
   } else { // if user hasn't selected fish yet, then use default
+      spritedata = loadJSON('assets/fish.json');
       spritesheet = loadImage('assets/clearFishSheet.png');
   }
 }
@@ -133,7 +139,6 @@ function draw() {
   image(tank, -25, -50);
   // image(img, mouseX - img.width / 2, mouseY - img.height / 2);
   scale(0.05)
-  image(blueFsh, mouseX * 20 - (blueFsh.width / 2), mouseY * 20 - (blueFsh.height / 2));
   scale(20)
 
   // image(dude, 100, 100);
