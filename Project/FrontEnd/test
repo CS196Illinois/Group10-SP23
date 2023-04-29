@@ -1,4 +1,0 @@
-use pwd and cd to .../project/
-git add FrontEnd/*file name*  (more slashes if more folders like client)
-git commit -m"message"
-git push

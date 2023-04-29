@@ -19,8 +19,23 @@ function preload() {
   spritesheet = loadImage('assets/clearFishSheet.png');
 }
 
+var cnv;
+
+function centerCanvas() {
+  var cx =  (windowWidth - width) / 2;
+  var cy =  (windowHeight - height) / 2;
+  cnv.position(cx, cy);
+}
+
+function windowResized() {
+  centerCanvas();
+}
+
 function setup() {
-  createCanvas(720, 400);
+  cnv = createCanvas(720, 400);
+  centerCanvas();
+  
+  cnv.parent("app");
 
   // p5.js create image example
   tank = loadImage('assets/aquarium.jpg');  // 800 x 507 pixels
