@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
   <link rel="stylesheet" type = "text/css" href="choosefish.css"/>
     <title>GuppyGuru Home</title>
           <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" href="#">GuppyGuru</a>
+            <a class="navbar-brand" href="#" style="cursor: default;">GuppyGuru</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,20 +31,23 @@
             </div>
           </nav>
 </head>
-
 <body>
+    <script type="text/javascript">
+        function changeFish(fishName) { // creates item called selectedFish with the fish user selects and stores it locally
+            localStorage.setItem('selectedFish', fishName);
+        }
+    </script>
+    <label id="fish-selection"></label>
     <div class="container">
         <div class="card">
             <div class="card-image">
                 <img src="https://pngimg.com/uploads/goldfish/goldfish_PNG20.png" alt="Ryukin">
             </div>
-
             <div class="card-body">
                 <span class="cost">$6.99</span>
                 <h2>Ryukin Goldfish</h2>
                 <p>Known for its vibrant colors, graceful movements, and unique features, the Ryukin Goldfish is a popular choice for aquarium enthusiasts.</p>
             </div>
-
             <div class="card-footer">
                 <div class="info">
                     <div class="value">64°F to 72°F</div>
@@ -60,26 +62,21 @@
                     <div class="type">ease of care</div>
                 </div>
             </div>
-
             <div class="selector">
-              <li><a class ="click" href="RyukinTank.html">
-                <button>go with this!</button>
+              <li><a class ="click" href="index.html">
+                <button id="ryukin" onclick="changeFish('assets/clearFishSheet.png')">go with this!</button>
               </a></li>
             </div>
-
         </div>
-
         <div class="card">
             <div class="card-image">
                 <img src="https://www.aqueon.com/-/media/project/oneweb/aqueon/us/care-guides/betta/betta-coralblue_600x400.png" alt="Betta">
             </div>
-
             <div class="card-body">
                 <span class="cost">$3.99</span>
                 <h3>Siamese Fighting Fish</h3>
                 <p>Bettas, known for their occassional aggressive displays, will bring beauty to any aquatic environment when properly cared for. </p>
             </div>
-
             <div class="card-footer">
                 <div class="info">
                     <div class="value">74-80°F</div>
@@ -95,24 +92,21 @@
                 </div>
             </div>
             <div class="selector">
-              <li><a class ="click" href="BettaTank.html">
-                <button>go with this!</button>
+              <li><a class ="click" href="index.html">
+                <button id="siamese" onclick="changeFish('assets/siameseFishSheet.png')">go with this!</button>
               </a></li>
             </div>
 
         </div>
-
         <div class="card">
             <div class="card-image">
                 <img src="https://www.pngplay.com/wp-content/uploads/9/Neon-Tetra-PNG-Images-HD.png" alt="Neon Tetra">
             </div>
-
             <div class="card-body">
                 <span class="cost">$3.00</span>
                 <h2>Neon Tetra</h2>
                 <p>This peaceful fish is loved for its stunning appearance and peaceful demeanor. The Neon Tetra is often considered a staple in community tanks.</p>
             </div>
-
             <div class="card-footer">
               <div class="info">
                   <div class="value">75-80°F</div>
@@ -128,25 +122,20 @@
               </div>
           </div>
             <div class="selector">
-              <li><a class ="click" href="NeonTetra.html">
-                <button>go with this!</button>
+              <li><a class ="click" href="index.html">
+                <button id="tetra" onclick="changeFish('assets/clearFishSheet.png')">go with this!</button>
               </a></li>
             </div>
-
         </div>
-
         <div class="card">
             <div class="card-image">
                 <img src="https://mytanklife.b-cdn.net/wp-content/uploads/2022/10/platinum-guppy-removebg-preview-600x600.png" alt="Character">
             </div>
-
             <div class="card-body">
-
                 <span class="cost">$2.50</span>
                 <h2>Platinum Guppy</h2>
                 <p>Known for their vibrant colors, unique patterns and low aggression, platinum guppies make a great choices for beginner aquarists.</p>
             </div>
-
             <div class="card-footer">
               <div class="info">
                   <div class="value">72-82°F</div>
@@ -162,8 +151,8 @@
               </div>
           </div>
             <div class="selector">
-              <li><a class ="click" href="GuppyTank.html">
-                <button>go with this!</button>
+              <li><a class ="click" href="index.html">
+                <button id="guppy" onclick="changeFish('assets/clearFishSheet.png')">go with this!</button>
               </a></li>
             </div>
         </div>
