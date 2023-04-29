@@ -16,7 +16,12 @@ let horses = [];
 
 function preload() {
   spritedata = loadJSON('assets/fish.json');
-  spritesheet = loadImage('assets/clearFishSheet.png');
+  const fish_sheet = localStorage.getItem('selectedFish'); // grabbing fish image from localstorage
+  if (fish_sheet) { // if fish_sheet isn't NULL
+      spritesheet = loadImage(fish_sheet);
+  } else { // if user hasn't selected fish yet, then use default
+      spritesheet = loadImage('assets/clearFishSheet.png');
+  }
 }
 
 var cnv;
